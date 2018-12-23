@@ -46,9 +46,15 @@ def gameplay():
         while guess != answer:
             attempt_number += 1
             if guess < answer:
-                guess = int(input("Sorry, the number is higher than that, please enter another guess: "))
+                try:
+                    guess = int(input("Sorry, the number is higher than that, please enter another guess: "))
+                except ValueError:
+                    print("Please enter an integer(No deimals!) as your numeral.")
             elif guess > answer:
-                guess = int(input("Sorry, the number is lower than that, please enter another guess: "))
+                try:
+                    guess = int(input("Sorry, the number is lower than that, please enter another guess: "))
+                except ValueError:
+                    print("Please enter an integer(No decimals!) as your numeral.")
             else:
                 print()
         else:
